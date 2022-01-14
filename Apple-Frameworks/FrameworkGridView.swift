@@ -20,10 +20,13 @@ struct FrameworkGridView: View {
                 LazyVGrid(columns: columns) {
                     ForEach(MockData.frameworks) { framework in
                         FrameworkTitleView(framework: framework)
+                            .onTapGesture {
+                                print("Yo")
+                            }
                     }
                 }
             }.navigationTitle("🍎 Frameworks")
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
